@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
@@ -16,10 +12,16 @@ public class App
         List<String> items = new ArrayList<String>();
 
         System.out.println( "Welcome to your shopping cart" );
+        System.out.println("List of commands:");
+        System.out.println("- list");
+        System.out.println("- add <item1>, <item2>, ...");
+        System.out.println("- delete <item index>");
+        System.out.println("- quit");
         String input = scan.nextLine();
 
         while (!input.equals("quit")) {
-            String[] words = input.trim().toLowerCase().split(", |,|\\s+");
+            String[] words = input.trim().toLowerCase().split("[,\\s]+");
+            
             int i = 1;
             switch (words[0]) {  
                 case "list":
